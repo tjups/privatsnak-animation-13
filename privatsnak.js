@@ -62,10 +62,28 @@ function flash() {
     console.log("flash");
     $("#bamse_container").off("animationend", flash);
 
-    $("#flash").addClass("flash_animation");
-    $("#flash").on("animationend", phoneAppear);
+    setTimeout(flashDelay, 3000);
 
+}
+
+function flashDelay() {
+    console.log("flashDelay");
+
+    $("#flash").addClass("flash_animation");
+
+    $("#scene").removeClass("bg1");
     $("#scene").addClass("bg2");
+
+    $("#bamse_sprite").removeClass("kys_bamse_sprite");
+    $("#kylling_sprite").removeClass("kys_kylling_sprite");
+    $("#bamse_sprite").addClass("flash_bamse_sprite");
+    $("#kylling_sprite").addClass("flash_kylling_sprite");
+
+    $("#hjerte_1").removeClass("hjerte_blink_1");
+    $("#hjerte_2").removeClass("hjerte_blink_2");
+    $("#hjerte_3").removeClass("hjerte_blink_3");
+
+    $("#flash").on("animationend", phoneAppear);
 
 }
 
@@ -85,6 +103,18 @@ function phoneAppear() {
     $("#phone_container").on("animationend", prepareToShare);
 }
 
+function prepareToShare() {
+    console.log("prepareToShare")
+    $("#flash").off("animationend", prepareToShare);
+
+    $("#phone_container").removeClass("phone_container_enter");
+    $("#phone_sprite").removeClass("phone_sprite_enter");
+
+    $("#phone_container").addClass("phone_container_type");
+    $("#phone_sprite").addClass("phone_sprite_type");
+
+
+}
 
 
 

@@ -6,14 +6,117 @@ body {
     width: 100vw;
     height: 56.25vw;
     position: relative;
-    background-image: url(BG-PRIVATSNAK1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
+
+}
+
+.bg1 {
+    background-image: url(BG-PRIVATSNAK1.jpg);
 }
 
 .bg2 {
     background-image: url(BG-PRIVATSNAK2-1.jpg);
 }
+
+
+/************ PHONE CONTAINER *************/
+
+#phone_container {
+    position: absolute;
+}
+
+.phone_container_start {
+    left: 30vw;
+    top: 60vw
+}
+
+.phone_container_enter {
+    animation-name: phone_container_enter_kf;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+}
+
+@keyframes phone_container_enter_kf {
+    0% {
+        left: 30vw;
+        top: 60vw;
+        transform: scale(0.8);
+    }
+
+    100% {
+        left: 32vw;
+        top: 15vw;
+        transform: scale(1.2);
+    }
+}
+
+.phone_container_type {
+    left: 32vw;
+    top: 15vw;
+    transform: scale(1.2)
+}
+
+/************ PHONE CONTAINER SLUT *************/
+
+/************ PHONE SPRITE *************/
+
+#phone_sprite {
+    background-image: url(phonesprites.svg);
+    width: 43.75vw;
+    height: 50vw;
+    background-size: 1000% 100%;
+}
+
+.phone_sprite_type {
+    animation-name: phone_sprite_type_kf;
+    animation-duration: 3.5s;
+    animation-fill-mode: both;
+    animation-timing-function: steps(9);
+}
+
+@keyframes phone_sprite_type_kf {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/************ PHONE SPRITE SLUT *************/
+
+#flash {
+    background-image: url(flash.svg);
+    position: absolute;
+    width: 75vw;
+    height: 48.75vw;
+    background-size: cover;
+    top: 3vw;
+    left: 13vw;
+    opacity: 0;
+
+}
+
+.flash_animation {
+    animation-name: flash_animation_kf;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes flash_animation_kf {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 
 #start_knap {
     position: absolute;
@@ -143,6 +246,8 @@ button {
     position: absolute;
 }
 
+/************ BAMSE CONTAINER *************/
+
 #bamse_container {
 
     position: absolute;
@@ -202,6 +307,10 @@ button {
     top: 23vw;
 }
 
+/************ BAMSE CONTAINER SLUT *************/
+
+/************ BAMSE SPRITE *************/
+
 #bamse_sprite {
     background-image: url(bamsedanskysked.svg);
     background-size: 1000% 300%;
@@ -248,6 +357,11 @@ button {
     }
 }
 
+.flash_bamse_sprite {
+    background-position: 0% -200%;
+
+}
+
 .ked_bamse_sprite {
     animation-name: ked_bamse_sprite_kf;
     animation-duration: 3s;
@@ -266,6 +380,9 @@ button {
     }
 }
 
+/************ BAMSE SPRITE SLUT *************/
+
+/************ KYLLING CONTAINER *************/
 
 #kylling_container {
     position: absolute;
@@ -322,6 +439,10 @@ button {
     top: 23vw;
 }
 
+/************ KYLLING CONTAINER SLUT *************/
+
+/************ KYLLING SPRITE *************/
+
 #kylling_sprite {
     background-image: url(kyllingdanskysked.svg);
     background-size: 1000% 300%;
@@ -367,6 +488,11 @@ button {
     }
 }
 
+.flash_kylling_sprite {
+    background-position: 0% -200%;
+
+}
+
 .ked_kylling_sprite {
     animation-name: ked_kylling_sprite_kf;
     animation-duration: 3s;
@@ -384,3 +510,5 @@ button {
         background-position: 1000% -200%;
     }
 }
+
+/************ KYLLING SPRITE SLUT*************/
