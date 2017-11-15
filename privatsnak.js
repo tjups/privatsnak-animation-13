@@ -69,8 +69,9 @@ function flashDelay() {
 
     $("#flash").addClass("flash_animation");
 
-    $("#scene").removeClass("bg1");
+
     $("#scene").addClass("bg2");
+    $("#scene").removeClass("bg1");
 
     $("#bamse_sprite").removeClass("kys_bamse_sprite");
     $("#kylling_sprite").removeClass("kys_kylling_sprite");
@@ -154,8 +155,11 @@ function ked() {
 
 
 
-    $("#scene").removeClass("bg2");
+
     $("#scene").addClass("bg3");
+    $("#scene").removeClass("bg2");
+
+
 
     $("#phone_container").on("animationend", kedDelay1);
 
@@ -237,7 +241,7 @@ function kedDelay10() {
     console.log("kedDelay10");
 
     $("#face2").addClass("ikon_anim_2");
-    setTimeout(nederen, 500);
+    setTimeout(nederen, 1500);
 
 }
 
@@ -269,8 +273,9 @@ function glad() {
     $("#bamse_sprite").addClass("dans_bamse_sprite");
     $("#kylling_sprite").addClass("dans_kylling_sprite");
 
-    $("#scene").removeClass("bg2");
+
     $("#scene").addClass("bg1");
+    $("#scene").removeClass("bg2");
 
     setTimeout(payoff2, 5000);
 
