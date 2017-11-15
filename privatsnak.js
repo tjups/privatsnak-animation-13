@@ -1,5 +1,3 @@
-//$(window).on("load", startStory);
-
 $("#start_knap").on("click", startKnap);
 
 function startKnap() {
@@ -88,7 +86,7 @@ function flashDelay() {
 }
 
 function phoneAppear() {
-    console.log("phoneAppear")
+    console.log("phoneAppear");
     $("#flash").off("animationend", phoneAppear);
 
 
@@ -104,8 +102,8 @@ function phoneAppear() {
 }
 
 function prepareToShare() {
-    console.log("prepareToShare")
-    $("#flash").off("animationend", prepareToShare);
+    console.log("prepareToShare");
+    $("#phone_container").off("animationend", prepareToShare);
 
     $("#phone_container").removeClass("phone_container_enter");
     $("#phone_sprite").removeClass("phone_sprite_enter");
@@ -113,30 +111,174 @@ function prepareToShare() {
     $("#phone_container").addClass("phone_container_type");
     $("#phone_sprite").addClass("phone_sprite_type");
 
+    $("#phone_container").on("animationend", promptAppear);
+
+
 
 }
 
+function promptAppear() {
+    console.log("promptAppear");
+    $("#phone_container").off("animationend", promptAppear);
+
+    $("#prompt").addClass("prompt_appear");
+    $("#ja").addClass("prompt_appear");
+    $("#nej").addClass("prompt_appear");
+
+}
+
+$("#ja").on("click", ked);
+$("#nej").on("click", glad);
 
 
+function ked() {
+    console.log("ked");
+
+    $("#ja").off("click", ked);
+
+    $("#prompt").addClass("prompt_disappear");
+    $("#ja").addClass("prompt_disappear");
+    $("#nej").addClass("prompt_disappear");
+
+    $("#phone_container").removeClass("phone_container_type");
+    $("#phone_container").addClass("phone_container_exit");
 
 
-
-
-
-//KED KNAP//
-
-$(".ked_btn").on("click", kedBtnHandler);
-
-function kedBtnHandler() {
     $("#bamse_container").removeClass("kys_bamse_container");
     $("#kylling_container").removeClass("kys_kylling_container");
 
-    $("#bamse_sprite").removeClass("kys_bamse_sprite");
-    $("#kylling_sprite").removeClass("kys_kylling_sprite");
+
 
     $("#bamse_container").addClass("ked_bamse_container");
     $("#kylling_container").addClass("ked_kylling_container");
 
+
+
+    $("#scene").removeClass("bg2");
+    $("#scene").addClass("bg3");
+
+    $("#phone_container").on("animationend", kedDelay1);
+
+
+}
+
+function kedDelay1() {
+    console.log("kedDelay1");
+    $("#phone_container").off("animationend", kedDelay1);
+
+
+
+    setTimeout(kedDelay2, 500);
+}
+
+function kedDelay2() {
+    console.log("kedDelay2");
+    $("#insta1").addClass("ikon_anim_1");
+
+    setTimeout(kedDelay3, 500);
+}
+
+function kedDelay3() {
+    console.log("kedDelay3");
+
+    $("#bamse_sprite").removeClass("flash_bamse_sprite");
+    $("#kylling_sprite").removeClass("flash_kylling_sprite");
+
     $("#bamse_sprite").addClass("ked_bamse_sprite");
     $("#kylling_sprite").addClass("ked_kylling_sprite");
+
+    $("#insta2").addClass("ikon_anim_2");
+    setTimeout(kedDelay4, 500);
+}
+
+function kedDelay4() {
+    console.log("kedDelay4");
+    $("#insta3").addClass("ikon_anim_3");;
+    setTimeout(kedDelay5, 500);
+}
+
+function kedDelay5() {
+    console.log("kedDelay5");
+    $("#snap2").addClass("ikon_anim_2")
+
+    setTimeout(kedDelay6, 500);
+}
+
+function kedDelay6() {
+    console.log("kedDelay6");
+    $("#snap1").addClass("ikon_anim_1");
+
+    setTimeout(kedDelay7, 500);
+}
+
+function kedDelay7() {
+    console.log("kedDelay7");
+    $("#face3").addClass("ikon_anim_3");
+
+    setTimeout(kedDelay8, 500);
+}
+
+function kedDelay8() {
+    console.log("kedDelay8");
+    $("#face1").addClass("ikon_anim_1");
+
+    setTimeout(kedDelay9, 500);
+}
+
+function kedDelay9() {
+    console.log("kedDelay9");
+
+
+    $("#snap3").addClass("ikon_anim_3");
+    setTimeout(kedDelay10, 500);
+}
+
+function kedDelay10() {
+    console.log("kedDelay10");
+
+    $("#face2").addClass("ikon_anim_2");
+    setTimeout(nederen, 500);
+
+}
+
+function nederen() {
+    console.log("nederen");
+    $("#nederen").addClass("nederen_appear");
+    setTimeout(payoff1, 5000);
+}
+
+function payoff1() {
+    console.log("payoff1");
+    $("#nederen").removeClass("nederen_appear");
+    $("#payoff1").addClass("nederen_appear");
+
+}
+
+
+function glad() {
+    console.log("glad");
+    $("#nej").off("click", glad);
+
+    $("#prompt").addClass("prompt_disappear");
+    $("#ja").addClass("prompt_disappear");
+    $("#nej").addClass("prompt_disappear");
+
+    $("#phone_container").removeClass("phone_container_type");
+    $("#phone_container").addClass("phone_container_exit");
+
+    $("#bamse_sprite").addClass("dans_bamse_sprite");
+    $("#kylling_sprite").addClass("dans_kylling_sprite");
+
+    $("#scene").removeClass("bg2");
+    $("#scene").addClass("bg1");
+
+    setTimeout(payoff2, 5000);
+
+}
+
+function payoff2() {
+    console.log("payoff2");
+
+    $("#payoff2").addClass("nederen_appear");
+
 }
