@@ -70,8 +70,8 @@ function flashDelay() {
     $("#flash").addClass("flash_animation");
 
 
-    $("#scene").addClass("bg2");
-    $("#scene").removeClass("bg1");
+    $("#baggrund").addClass("bg2");
+    $("#baggrund").removeClass("bg1");
 
     $("#bamse_sprite").removeClass("kys_bamse_sprite");
     $("#kylling_sprite").removeClass("kys_kylling_sprite");
@@ -156,8 +156,8 @@ function ked() {
 
 
 
-    $("#scene").addClass("bg3");
-    $("#scene").removeClass("bg2");
+    $("#baggrund").addClass("bg3");
+    $("#baggrund").removeClass("bg2");
 
 
 
@@ -274,8 +274,8 @@ function glad() {
     $("#kylling_sprite").addClass("dans_kylling_sprite");
 
 
-    $("#scene").addClass("bg1");
-    $("#scene").removeClass("bg2");
+    $("#baggrund").addClass("bg1");
+    $("#baggrund").removeClass("bg2");
 
     setTimeout(payoff2, 5000);
 

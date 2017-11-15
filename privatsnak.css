@@ -12,6 +12,15 @@ body {
 
 }
 
+#baggrund {
+    width: 100vw;
+    height: 56.25vw;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
 .bg1 {
     background-image: url(BG-PRIVATSNAK1.jpg);
 }
